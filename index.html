@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Simplify your life with Panels - MidCamp 2015</title>
+
+    <meta name="description" content="A introductory presentation on Drupal's Panels suite of modules.">
+    <meta name="author" content="Chris Hill">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/midcamp-color.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+            <div class="footer">
+                <div class="branding--logo">
+                    <span class="logo__image"><img src="lib/image/content/logo.png" alt="MidCamp 2015 logo" height="55px" /></span>
+                    <p class="logo__site-name">#MidCamp</p>
+                </div>
+                <div class="session--info">
+                    <p class="session__title">Simplify your life with Panels <span class="seperator">&nbsp;/&nbsp;</span></p>
+                    <p class="session__presenter">Chris Hill</p>
+                </div>
+            </div>
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Simplify your life with Panels</h1>
+          <h3>http://2015.midcamp.org/session-proposal/simplify-your-life-panels</h3>
+          <h3>MidCamp 2015</h3>
+          <h3>#MidCamp</h3>
+        </section>
+
+        <section>
+          <div style="float:right;"><img alt="Picture of Chris Hill" src="lib/image/custom/chrishill_profile.jpg" /></div>
+          <h1>Chris Hill</h1>
+          <h3>krisahil (drupal.org)</h3>
+          <h3>Bonnier Corporation</h3>
+          <h3>http://sandcastle.bonniercorp.com/</h3>
+          <p><em>A platform for high-functioning media websites.</em></p>
+        </section>
+
+        <section>
+          <p>Not the Drupal-famous "Chris Hill" of Weather.com fame.</p>
+          <img alt="Weather Channel logo" src="lib/image/custom/twc_lightning.jpg" />
+          <aside class="notes">
+            <p>
+            Former colleagues worked closely with him and say he is an incredible technical talent and leader.
+            </p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Good ways to build,</h2>
+          <p class="fragment"> and bad. :-(</p>
+          <div class="fragment">
+            <p>Best practices is about learning from those who have succeeded.</p>
+            <img alt="'Do it right the first time' meme" src="lib/image/custom/office_space_meme_first_time.jpg" />
+          </div>
+        </section>
+
+        <section>
+          <h1>Goals</h1>
+          <ul>
+            <li>Discuss block-placement strategies.</li>
+            <li class="fragment">Convince you to do <strike>my</strike> our way.</li>
+            <li class="fragment">Stay away from the weeds.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Who here is perfect?</h1>
+          <p class="fragment">We've all "architected" solutions we're not proud of.</p>
+          <ul>
+            <li class="fragment">Printed HTML in page TPL?</li>
+            <li class="fragment">Programmatically rendered a block in a node's body?</li>
+            <li class="fragment">Added inline CSS to node's body to achieve weird layout (like that's gonna be responsive)?</li>
+            <li class="fragment">Added CSS or JS outside of drupal_add_css/js()?</li>
+            <li class="fragment">Added SQL queries in template files instead of by preprocessing?</li>
+          </ul>
+          <aside class="notes">
+            <p>Doing site audits have showed me we're ALL to blame.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>A better way</h2>
+            <p class="fragment">Plan your next site!</p>
+            <p class="fragment">Research and decide modules before starting build. No fun, I know. :-)</p>
+        </section>
+
+        <section>
+          <h2>Page layout</h2>
+          <img style="float:right;" alt="HTML page layout example" src="lib/image/custom/html5_layout1.jpg" />
+          <ul>
+            <li>Header</li>
+            <li>Content</li>
+            <li>Sidebar</li>
+            <li>Footer</li>
+          </ul>
+          <p>Big question: <span class="fragment">How to place blocks into those regions?</span></p>
+        </section>
+
+        <section>
+          <h2>Core blocks administration</h2>
+          <ul>
+            <li>Deceptively simple</li>
+            <li>Each block can be placed into only one region.</li>
+          </ul>
+          <img src="lib/image/custom/layout_option_core_block.png">
+        </section>
+
+        <section>
+          <h2>Context module</h2>
+          <ul>
+            <li>Provides intricate control</li>
+            <li>It's not Panels. :-)</li> 
+          </ul>
+          <img src="lib/image/custom/layout_option_context.png">
+        </section>
+
+        <section>
+          <h2>What is Panels?</h2>
+          <p>Comprehensive suite to manage blocks across all regions.</p>
+          <p class="fragment">Simplify your life with one toolset.<p>
+          <ul>
+            <li class="fragment">Drag-and-drop interface to place blocks.</li>
+            <li class="fragment">Layouts: Avoid CSS for basic layouts!</li>
+            <li class="fragment">Contexts: Blocks are always aware of what's available.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Panels tools</h2>
+          <h3>Why so many?! Their titles can be confusing.</h3>
+          <ul class="fragment">
+            <li>Page manager</li>
+            <li>Mini panels</li>
+            <li>Panelizer</li>
+            <li><strike>Panel nodes</strike></li>
+            <li>Panels everywhere</li>
+          </ul>
+          <aside class="notes">
+            <p>We'll discuss in order logical to site-builder, not programmer.</p>
+          </aside>
+        </section>
+
+        <section>
+          <section>
+            <h2>Prereq 1: Layouts</h2>
+            <img style="float:right; width: 700px" alt="Page manager page with arguments example" src="lib/image/custom/example_panels_layout.png" />
+            <ul style="display:block;">
+              <li class="fragment">Each section is a "region".</li>
+              <li class="fragment">The "blocks" can be regular blocks, Views, menus, etc.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Layouts provided</h2>
+            <img alt="Panels layouts out-of-the-box example" src="lib/image/custom/panels_layouts.png" />
+            <ul style="display:block;">
+              <li class="fragment">Plugin method: Declares the regions, template, and CSS.</li>
+              <li class="fragment">Can be stored in theme or modules.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Prereq 2: Contexts</h2>
+            <ul>
+              <li class="fragment">What type of data is available on this page?</li>
+              <li class="fragment">Only appropriate blocks are available for use.</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Page manager</h2>
+            <img style="float:right; width: 700px" alt="Page manager page with arguments example" src="lib/image/custom/example_page_manager.png" />
+            <p class="fragment">Replacement (mostly) for hook_menu() for custom pages.</p>
+            <p class="fragment">Arguments in URL become contexts (e.g. node ID becomes full node).</p>
+          </section>
+          <section>
+            <h2>Page manager: Variants</h2>
+            <img style="float:right; width: 700px" alt="Page manager variants example" src="lib/image/custom/example_page_manager_variants.png" />
+            <ul>
+              <li class="fragment">Selection rules determine which variant gets used.</li>
+              <li class="fragment">Don't get too crazy with the rules.</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2>Mini panels</h2>
+          <img style="float:right; width: 700px" alt="Mini panel example in header" src="lib/image/custom/example_mini_panel_in_header.png" />
+          <p class="fragment">Group blocks together as Panels layouts.</p>
+          <p class="fragment">Can be used as blocks throughout site.</p>
+        </section>
+
+        <section>
+          <section>
+            <h2>Panelizer</h2>
+            <p>More checkboxes than you can shake a stick at!</p>
+            <p class="fragment">Read tutorials before starting!</p>
+            <p class="fragment">Remember, with great power comes... <span class="fragment"><em>great</em> complexity.</span></p>
+          </section>
+          <section>
+            <h2>Panelizer: Why so great?</h2>
+            <ul>
+              <li class="fragment">Allows editors to choose a Panels template per node.</li>
+              <li class="fragment">Customize the Panel for one specific node. Powerful, and dangerous!</li>
+              <li class="fragment">And <em>both</em> of these for each view mode for each node!</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Panelizer: So many choices!</h2>
+            <img alt="Screenshot of Panelizer choices on a node edit form" src="lib/image/custom/example_panelizer_choices.png" />
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Panels is greedy.</h2>
+            <img class="fragment" alt="Panels Everywhere meme" src="lib/image/custom/60375909.jpg" />
+          </section>
+          <section>
+            <h2>What is Panels Everywhere?</h2>
+            <ul>
+              <li class="fragment">Frees you from core's blocks and regions.</li>
+              <li class="fragment">Control the header, sidebars, and footer in Panels interface.</li>
+              <li class="fragment">Variants allow easy switching of page layout and blocks.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>How to use?</h2>
+            <ul>
+              <li class="fragment">Use a supported theme.</li>
+              <li class="fragment">Try to use from start of project.</li>
+              <li class="fragment">Variants allow easy switching of page layout and blocks.</li>
+            </ul>
+            <img class="fragment" alt="Screenshot of Panelizer choices on a node edit form" src="lib/image/custom/panels_everywhere_display.png" />
+          </section>
+        </section>
+
+        <section>
+          <h2>Next steps</h2>
+          <p>Great modules to extend Panels:</p>
+          <ul>
+            <li class="fragment"><a href="https://www.drupal.org/project/fieldable_panels_panes">Fieldable panel panes</a></li>
+            <li class="fragment"><a href="https://www.drupal.org/project/classy_panel_styles">Classy Panel Styles</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Closing</h2>
+          <ul>
+            <li class="fragment">Is Panels ecosystem perfect?</li>
+            <li class="fragment">Mature project, with lots of supporting themes and modules.</li>
+            <li class="fragment">Will tomorrow's you be happy?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Thank you!</h2>
+          <h4>Questions?</h4>
+          <div class="fragment">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="http://nodeone.se/en/learn-page-manager">High-quality teaching by Johan Falk: http://nodeone.se/en/learn-page-manager</a></li>
+              <li><a href="https://drupalize.me/videos/introduction-building-websites-using-panels-module">Drupalize.me training: https://drupalize.me/videos/introduction-building-websites-using-panels-module</a></li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
